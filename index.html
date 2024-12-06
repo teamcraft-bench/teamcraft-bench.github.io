@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TeamCraft</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<section id="header" class="dark">
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="videos/main_web.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <header>
+        <h1>TeamCraft</h1>
+        <p>A Benchmark for Embodied Multi-Agent Systems in Minecraft</p>
+    </header>
+    <footer>
+        <ul class="actions special">
+            <li><a href="#paper" class="button scrolly">Paper</a></li>
+            <li><a href="https://github.com/teamcraft-bench/teamcraft" class="button">GitHub</a></li>
+            <li><a href="https://huggingface.co/datasets/teamcraft/teamcraft_data" class="button scrolly">Dataset</a></li>
+            <li><a href="https://huggingface.co/collections/teamcraft/teamcraft-674d2bf1142fdb65c430f2ba" class="button scrolly">Models</a></li>
+        </ul>
+    </footer>
+</section>
+
+
+
+    <nav id="navbar" class="nav-buttons-wrapper">
+        <ul class="nav-buttons">
+            <li><a href="#first" class="active">Abstract</a></li>
+            <li><a href="#second">Task</a></li>
+            <li><a href="#third">Model</a></li>
+            <li><a href="#fourth">Diversity</a></li>
+            <li><a href="#fifth">Result</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#paper">Paper</a></li>
+        </ul>
+    </nav>
+
+
+
+<!-- First -->
+<section id="first" class="main">
+    <header>
+        <div class="container">
+<!--            <div class="video-wrapper">-->
+<!--                <video controls autoplay muted loop>-->
+<!--                    <source src="videos/main_web.mp4" type="video/mp4">-->
+<!--                    Your browser does not support the video tag.-->
+<!--                </video>-->
+<!--            </div>-->
+            <h2>Abstract</h2>
+            <p style="text-align: justify;">
+                Collaboration is a cornerstone of society.
+                In the real world, human teammates make use of multi-sensory data to tackle challenging tasks in
+                ever-changing environments.
+                It is essential for embodied agents collaborating in visually-rich environments replete with dynamic
+                interactions to understand multi-modal observations and task specifications.
+                To evaluate the performance of generalizable multi-modal collaborative agents, we present TeamCraft, a
+                multi-modal multi-agent benchmark built on top of the open-world video game Minecraft.
+                The benchmark features 55,000 task variants specified by multi-modal prompts, procedurally-generated
+                expert demonstrations for imitation learning, and carefully designed protocols to evaluate model
+                generalization capability.
+                We also perform extensive analyses to better understand the limitations and strengths of existing
+                approaches.
+                Our results indicate that existing models continue to face significant challenges in generalizing to
+                novel goals, scenes, and unseen numbers of agents.
+                These findings underscore the potential for further research in this area.
+            </p>
+        </div>
+    </header>
+</section>
+
+<!-- Second -->
+<section id="second" class="main">
+    <header>
+        <h2>Tasks</h2>
+        <p> </p>
+        <div class="container">
+            <div class="row">
+
+                <!-- First Video -->
+                <div class="col-6">
+                    <div class="video-wrapper">
+                        <video controls autoplay muted loop class="fit">
+                            <source src="videos/task_build.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-description">Building: build based on blueprint.  </p>
+                    </div>
+                </div>
+
+                <!-- Second Video -->
+                <div class="col-6">
+                    <div class="video-wrapper">
+                        <video controls autoplay muted loop class="fit">
+                            <source src="videos/task_break.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-description">Clearing:  remove blocks from an area </p>
+                    </div>
+                </div>
+
+                <!-- Third Video -->
+                <div class="col-6">
+                    <div class="video-wrapper">
+                        <video controls autoplay muted loop class="fit">
+                            <source src="videos/task_farm.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-description">Farming: sow and harvest crops </p>
+                    </div>
+                </div>
+
+                <!-- Fourth Video -->
+                <div class="col-6">
+                    <div class="video-wrapper">
+                        <video controls autoplay muted loop class="fit">
+                            <source src="videos/task_smelt.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-description">Smelting: obtain goal items using furnaces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+
+<!-- Third -->
+<section id="third" class="main">
+    <header>
+        <div class="content">
+            <div class="container">
+                <h2> Multi-modal VLA Model  </h2>
+                <p> </p>
+                <span class="image fit"><img src="images/model_arch.png" alt="Model Architecture"/></span>
+                <p style="text-align: justify;">TeamCraft-VLA (Vision-Language-Action) is a multi-modal vision-language action model designed
+                    for multi-agent collaborations. The model first encodes multi-modal prompts specifying the task,
+                    then encodes the visual observations and inventory information from agents during each time step
+                    to generate actions.
+                </p>
+                <p> </p>
+
+
+                <h2> Multi-modal Prompts  </h2>
+                <p> </p>
+                <span class="image fit"><img src="images/multi_modal.png" alt="Multi-Modal"/></span>
+                <p style="text-align: justify;">Multi-modal prompts are provided for all tasks. The system prompt includes both the three
+                    orthographic views and specific language instructions. Observations consist of first-person views
+                    from different agents, along with agent-specific information.
+                </p>
+            </div>
+        </div>
+    </header>
+</section>
+
+<!-- Fourth -->
+<section id="fourth" class="main">
+    <header>
+        <div class="content">
+            <div class="container">
+                <h2> Diversity  </h2>
+                <p> </p>
+                <span class="image fit"><img src="images/var.png" alt="Variants"/></span>
+                <p style="text-align: justify;">More than 30 target object or resource
+                    are used in tasks. Objects, such as a fence, an anvil, or a
+                    stone block, have different shapes and textures. Farm crops
+                    have different visual appearances during growth stage. The
+                    smelting task has resources with different appearances, such
+                    as chickens or rabbits.
+                </p>
+            </div>
+        </div>
+    </header>
+</section>
+
+<!-- Fifth -->
+<section id="fifth" class="main">
+    <header>
+        <div class="content">
+            <div class="container">
+                <h2> Experiment Results </h2>
+                <p> </p>
+                <span class="image fit"><img src="images/completion_success_variant.png" alt="Success rate for subgoal and task"/></span>
+                <p style="text-align: justify;"> 
+                    For both the 7B and 13B models, the subgoal success rate and task success rate fall short of optimal performance. This highlights the inherent difficulty of the designed
+                    tasks and underscores the current limitations of VLA models. Centralized tasks exhibit significantly better performance across nearly all variants, 
+                    highlighting the challenge of effective planning with partial information. The performance of the language model in the text-based Grid-World significantly surpasses VLA models in multi-modal settings. This suggests that state descriptions provided purely in text format are less challenging for models than multi-modal inputs, underscoring a notable gap in current VLA models’ ability to effectively interpret visual information.
+                </p>
+                <p> </p>
+                <span class="image fit"><img src="images/success.png" alt="Success rate across models"/></span>
+                <p style="text-align: justify;">Task success rates of centralized and decentralized VLA model and GPT-4o.
+                    Models are trained with the full data except GPT-4o. TeamCraft-VLA-7B-Cen outperforms the other two
+                    methods by a significant margin across nearly all variants.
+                </p>
+                <p style="text-align: justify;"> </p>
+            </div>
+        </div>
+    </header>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="main">
+    <header style="background-color: rgba(199, 199, 199, 0.02); margin-bottom: -5em;">
+        <div class="container">
+            <h2>Team</h2>
+        </div>
+    </header>
+    <div class="content ">
+        <div class="container">
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="https://scholar.google.com/citations?user=rytqPd8AAAAJ&hl=en" target="_blank">
+                            <span class="image fit"><img src="images/avatars/longqian.png" alt="Long Qian"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="https://scholar.google.com/citations?user=rytqPd8AAAAJ&hl=en" target="_blank">Long
+                                Qian</a></h3>
+                            <p><a href="mailto:longqian@ucla.edu">longqian@ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="https://zli.one/" target="_blank">
+                            <span class="image fit"><img src="images/avatars/zhili.png" alt="Zhi Li"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="https://zli.one/" target="_blank">Zhi Li</a></h3>
+                            <p><a href="mailto:mikeli@cs.ucla.edu">mikeli@cs.ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="https://nikepupu.github.io" target="_blank">
+                            <span class="image fit"><img src="images/avatars/rangong.png"
+                                                         alt="Ran (Steven) Gong"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="https://nikepupu.github.io" target="_blank">Ran (Steven) Gong</a></h3>
+                            <p><a href="mailto:nikepupu@g.ucla.edu">nikepupu@ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="https://web.cs.ucla.edu/~dt/" target="_blank">
+                            <span class="image fit"><img src="images/avatars/Demetri_Terzopoulos.png"
+                                                         alt="Demetri Terzopoulos"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="https://web.cs.ucla.edu/~dt/" target="_blank">Demetri
+                                Terzopoulos</a></h3>
+                            <p><a href="mailto:dt@cs.ucla.edu">dt@cs.ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="http://www.stat.ucla.edu/~ywu/" target="_blank">
+                            <span class="image fit"><img src="images/avatars/yingnianwu.png" alt="Ying Nian Wu"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="http://www.stat.ucla.edu/~ywu/" target="_blank">Ying Nian Wu</a>
+                            </h3>
+                            <p><a href="mailto:ywu@stat.ucla.edu">ywu@stat.ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+                <!-- Team Member 6 -->
+                <div class="col-4 col-12-narrow">
+                    <section>
+                        <a href="https://xfgao.github.io" target="_blank">
+                            <span class="image fit"><img src="images/avatars/xfgao.png" alt="Xiaofeng Gao"/></span>
+                        </a>
+                        <header>
+                            <h3><a href="https://xfgao.github.io" target="_blank">Xiaofeng Gao</a></h3>
+                            <p><a href="mailto:xfgao@g.ucla.edu">xfgao@ucla.edu</a></p>
+                        </header>
+                    </section>
+                </div>
+            </div>
+            <div style="text-align: left; font-size: medium; margin-top: 2em;">
+                <p><i class="fas fa-envelope"></i> TeamCraftBench@gmail.com </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Paper Section -->
+<section id="paper" class="main">
+    <header>
+        <div class="container">
+            <h2>Check out our paper!</h2>
+        </div>
+    </header>
+    <div class="content style4">
+        <div class="container">
+            <!-- Buttons Section -->
+            <div class="buttons-wrapper" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1em;">
+                <a href="https://arxiv.org/" target="_blank" class="button">
+                    <i class="fas fa-link button-icon"></i> ArXiv Paper
+                </a>
+                <a href="https://arxiv.org/" target="_blank" class="button">
+                    <i class="fas fa-file-pdf button-icon"></i> PDF
+                </a>
+                <a href=""
+                   target="_blank" class="button">
+                    <i class="fas fa-image button-icon"></i> Poster
+                </a>
+                <button id="copy_button" class="button" onclick="copyBibTex()">
+                    <i class="fas fa-copy button-icon"></i> Copy BibTeX
+                </button>
+            </div>
+
+            <!-- BibTeX Block -->
+            <div class="bibtex-wrapper"
+                 style="background-color: #f7f7f7; padding: 1.5em; border-radius: 8px; position: relative;">
+                <button class="copy-code-button"
+                        style="position: absolute; top: 10px; right: 10px; background: #333; color: #fff; border: none; padding: 8px 12px; cursor: pointer; font-size: 0.85em; border-radius: 4px;"
+                        onclick="copyBibTex()">Copy
+                </button>
+                <pre style="font-size: 1.1em; font-family: 'Source Code Pro', monospace; color: #b33; margin: 0; overflow: auto;">
+Pending
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Copy Functionality -->
+<script>
+    function copyBibTex() {
+        const bibtexText = `Pending`;
+        navigator.clipboard.writeText(bibtexText).then(() => {
+            alert('BibTeX copied to clipboard!');
+        });
+    }
+</script>
+
+
+<!-- Footer -->
+<section id="footer">
+    <div class="copyright">
+        TeamCraft team @2024
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
