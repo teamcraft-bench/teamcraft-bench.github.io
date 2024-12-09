@@ -313,16 +313,16 @@
         <div class="container">
             <!-- Buttons Section -->
             <div class="buttons-wrapper" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1em;">
-                <a href="https://arxiv.org/" target="_blank" class="button">
+                <a href="https://arxiv.org/abs/2412.05255" target="_blank" class="button">
                     <i class="fas fa-link button-icon"></i> ArXiv Paper
                 </a>
-                <a href="https://arxiv.org/" target="_blank" class="button">
+                <a href="https://arxiv.org/pdf/2412.05255" target="_blank" class="button">
                     <i class="fas fa-file-pdf button-icon"></i> PDF
                 </a>
-                <a href=""
+                <!-- <a href=""
                    target="_blank" class="button">
                     <i class="fas fa-image button-icon"></i> Poster
-                </a>
+                </a> -->
                 <button id="copy_button" class="button" onclick="copyBibTex()">
                     <i class="fas fa-copy button-icon"></i> Copy BibTeX
                 </button>
@@ -336,7 +336,15 @@
                         onclick="copyBibTex()">Copy
                 </button>
                 <pre style="font-size: 1.1em; font-family: 'Source Code Pro', monospace; color: #b33; margin: 0; overflow: auto;">
-Pending
+@misc{long2024teamcraftbenchmarkmultimodalmultiagent,
+    title={TeamCraft: A Benchmark for Multi-Modal Multi-Agent Systems in Minecraft}, 
+    author={Qian Long and Zhi Li and Ran Gong and Ying Nian Wu and Demetri Terzopoulos and Xiaofeng Gao},
+    year={2024},
+    eprint={2412.05255},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI},
+    url={https://arxiv.org/abs/2412.05255}, 
+}
                 </pre>
             </div>
         </div>
@@ -346,7 +354,15 @@ Pending
 <!-- JavaScript for Copy Functionality -->
 <script>
     function copyBibTex() {
-        const bibtexText = `Pending`;
+        const bibtexText = `@misc{long2024teamcraftbenchmarkmultimodalmultiagent,
+      title={TeamCraft: A Benchmark for Multi-Modal Multi-Agent Systems in Minecraft}, 
+      author={Qian Long and Zhi Li and Ran Gong and Ying Nian Wu and Demetri Terzopoulos and Xiaofeng Gao},
+      year={2024},
+      eprint={2412.05255},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2412.05255}, 
+}`;
         navigator.clipboard.writeText(bibtexText).then(() => {
             alert('BibTeX copied to clipboard!');
         });
